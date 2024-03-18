@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --Strong-cyan: hsl(172, 67%, 45%);
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+}
+
+.contanier {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--Strong-cyan);
+  flex-direction: column;
+}
+
+h1 img {
+  width: 60px;
+  margin-bottom: 30px;
+}
+.card {
+  width: 650px;
+  background: var(--White);
+  padding: 25px;
+  border-radius: 10px;
+  display: flex;
+}
+
+form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+.bill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  color: var(--Dark-grayish-cyan);
+  font-weight: bold;
+}
+label {
+  text-transform: capitalize;
+  color: var(--Dark-grayish-cyan);
+  font-weight: bold;
+}
+.input-bill,
+.person {
+  width: 90%;
+  padding: 10px;
+  direction: rtl;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  background: var(--Very-light-grayish-cyan);
+  border: 1px solid transparent;
+  position: relative;
+}
+.input-bill:focus {
+  border: 1px solid var(--Strong-cyan);
+}
+.mix {
+  position: relative;
+  margin-bottom: 20px;
+}
+.mix > img {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+.input-bill::before {
+  content: "";
+  position: absolute;
+  background-image: url(../tip-calculator-app-main/images/icon-dollar.svg);
+}
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* width: 160px; */
+  margin: 20px 0;
+}
+.btns button {
+  width: 24%;
+  padding: 7px 1px;
+  background: var(--Very-dark-cyan);
+  color: var(--White);
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+}
+.btns button:hover {
+  background-color: var(--Light-grayish-cyan);
+  cursor: pointer;
+}
+input.custom {
+  width: 65px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 6px;
+  background-color: var(--Very-light-grayish-cyan);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.person {
+  margin-top: 10px;
+}
+
+.details {
+  width: 50%;
+  background: var(--Very-dark-cyan);
+  color: var(--Very-light-grayish-cyan);
+  padding: 35px 25px 25px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  position: relative;
+}
+.details .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.details .info .text span {
+  color: var(--Grayish-cyan);
+}
+
+h3 {
+  font-size: 35px;
+  color: var(--Strong-cyan);
+  font-weight: bold;
+}
+
+a {
+  position: absolute;
+  bottom: 25px;
+  display: block;
+  text-decoration: none;
+  color: var(--Very-dark-cyan);
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--Strong-cyan);
+  width: 80%;
+  text-align: center;
+  font-weight: bold;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+}
+a:hover {
+  background: var(--Light-grayish-cyan);
+}
+
+@media (max-width: 666px) {
+  .contanier {
+    display: block;
+    padding: 15px 0px;
+  }
+  h1 {
+    width: 100px;
+    margin: 0 auto;
+  }
+  .card {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+    width: 100%;
+    display: block;
+  }
+  form {
+    width: 100%;
+    padding: 0;
+  }
+  .details {
+    width: 100%;
+    padding-bottom: 40px;
+  }
+  a {
+    bottom: 10px;
+    width: 88%;
+  }
+  .btns {
+    justify-content: space-around;
+  }
+  .btns button {
+    width: 40%;
+  }
+  input.custom {
+    width: 40%;
+  }
+}
+
+
+.btns button.active {
+  background-color: red;
+}
